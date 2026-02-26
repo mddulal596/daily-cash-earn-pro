@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Admin Panel - Control Center</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <style>
+        .admin-box { padding: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: center; }
+        th { background: #1d976c; color: white; }
+        .status-pending { color: orange; font-weight: bold; }
+        .btn-approve { background: #1d976c; color: #fff; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="top-container">
+        <h1>Admin Control</h1>
+    </div>
+
+    <div class="admin-box">
+        <h3>Pending Withdraw Requests</h3>
+        <div style="overflow-x:auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>User Name</th>
+                        <th>Amount</th>
+                        <th>Method</th>
+                        <th>Phone</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="requestTable">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

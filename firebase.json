@@ -1,0 +1,9 @@
+const firebaseConfig = {
+  apiKey: "AIzaSyCUHO5xAqFn1DW0HnDwEeWJzpdlSHkm_4U",
+  authDomain: "easy-cash-earn-59841.firebaseapp.com",
+  projectId: "easy-cash-earn-59841",
+  storageBucket: "easy-cash-earn-59841.firebasestorage.app",
+  messagingSenderId: "904318913100",
+  appId: "1:904318913100:android:89324d7253acfc291282e9"
+};
+firebase.initializeApp(firebaseConfig);

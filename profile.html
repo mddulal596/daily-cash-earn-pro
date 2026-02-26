@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>My Profile - Easy Cash</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+    <div class="top-container">
+        <button onclick="history.back()" style="position:absolute; left:20px; background:none; border:none; font-size:20px; color:#000;">←</button>
+        <div class="profile-circle">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" width="60"/>
+        </div>
+        <h2>User Profile</h2>
+    </div>
+
+    <div class="profile-details" style="padding: 20px; text-align: left; max-width: 400px; margin: 0 auto;">
+        <div style="background: #fff; padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 15px;">
+            <p><strong>Name:</strong> <span id="profName">Loading...</span></p>
+            <p><strong>Total Balance:</strong> <span id="profBal">TK. 0.00</span></p>
+            <p><strong>Status:</strong> <span style="color: green; font-weight: bold;">Active</span></p>
+        </div>
+        <button class="withdraw-main-btn" style="width: 100%;" onclick="location.href='withdraw.html'">Go to Withdraw</button>
+        
+        <button class="withdraw-main-btn" style="width: 100%; background: #ea4335; margin-top: 10px;" onclick="logout()">Logout</button>
+    </div>
+<button onclick="window.location.href='about.html'">About Us</button>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script>
+        // প্রোফাইল ডাটা লোড করা
+        document.getElementById('profBal').innerText = "TK. " + (localStorage.getItem('bal') || "0.00");
+        document.getElementById('profName').innerText = localStorage.getItem('user_name') || "User";
+
+        function logout() {
+            localStorage.clear();
+            location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>
